@@ -8,6 +8,6 @@
         <button class="btn-dark-green">Shop Now</button>
     </div>
 </div>
-<x-product-list></x-priduct-list>
+<x-product-list :products="$products" :admin="$admin"></x-product-list>
 
 @endsection

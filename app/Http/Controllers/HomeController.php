@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $admin = false;
+        // get all the products
+        $products = Product::all();
+
+
+        //pass the data to th view
+        return view('home', ['products' => $products, 'admin' => $admin],);
     }
 }
